@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -12,29 +12,31 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     if @picture.save
-    redirect_to new_picture_path, notice: "投稿完了しました！"
+    redirect_to pictures_path, notice: "投稿完了しました！"
     else
-      # 入力フォームを再描画します。
       render :new
     end
   end
 
   def show
-    # @picture = Picture.find(params[:id])
   end
 
   def edit
-    # @picture = Picture.find(params[:id])
   end
 
   def update
-    # @picture = Picture.find(params[:id])
     if @picture.update(picture_params)
       redirect_to pictures_path, notice: "編集しました！"
     else
       render :edit
     end
   end
+
+  def destroy
+    @picture.destroy
+    redirect_to pictures_path, notice:"削除しました！"
+  end
+
 
 
   private
