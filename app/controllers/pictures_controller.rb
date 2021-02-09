@@ -58,7 +58,7 @@ class PicturesController < ApplicationController
   #   params.require(:picture).permit(:image, :content)
   # end
   def picture_params
-    params.require(:picture).permit(:id, :image, :content)
+    params.require(:picture).permit(:id, :image, :content, :image_cache)
   end
 
   def set_blog
