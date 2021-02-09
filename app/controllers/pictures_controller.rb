@@ -11,11 +11,25 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(picture_params)
-    if @picture.save
-    redirect_to pictures_path, notice: "投稿完了しました！"
-    else
+    if params[:back]
       render :new
+    else
+      if @picture.save
+        redirect_to pictures_path, notice: "画像を投稿しました！"
+      else
+        render :new
+      end
     end
+  end
+
+  # def confirm
+  #   @picture = Picture.new(picture_params)
+  #   render :new if @picture.invalid?
+  # end
+  def confirm
+    @picture = Picture.new(picture_params)
+    @picture.id = params[:id]
+    render :new if @picture.invalid?
   end
 
   def show
@@ -40,8 +54,11 @@ class PicturesController < ApplicationController
 
 
   private
+  # def picture_params
+  #   params.require(:picture).permit(:image, :content)
+  # end
   def picture_params
-    params.require(:picture).permit(:image, :content)
+    params.require(:picture).permit(:id, :image, :content)
   end
 
   def set_blog
