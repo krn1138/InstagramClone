@@ -11,10 +11,20 @@
     </div>
   <% end %>
 
+  <!-- <div class="field"> -->
+      <%#= form.label :image %>
+      <!-- <div class="field_two"> -->
+      <%#= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+      <!-- </div> -->
+      <%#= form.file_field :image %>
+      <%#= form.hidden_field :image_cache %>
+    <!-- </div> -->
   <div class="picture_image">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
+
+  
   <div class="picture_content">
     <%= form.label :content %>
     <%= form.text_field :content %>

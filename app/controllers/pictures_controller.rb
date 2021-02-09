@@ -7,6 +7,11 @@ class PicturesController < ApplicationController
 
   def new
     @picture = Picture.new
+  #   if params[:back]
+  #   @picture = Picture.new(picture_params)
+  # else
+  #   @picture = Picture.new
+  #   end
   end
 
   def create
@@ -40,7 +45,7 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
-      redirect_to pictures_path, notice: "編集しました！"
+      redirect_to pictures_path,　notice:"更新しました!"
     else
       render :edit
     end
