@@ -1,10 +1,13 @@
 <h1>ブログ一覧</h1>
+
 <p><%= notice %></p>
+
 <table>
   <tr>
     <th>画像</th>
     <th>内容</th>
   </tr>
+
 <% @pictures.each do |picture| %>
   <tr>
     <td><%= picture.image %></td>

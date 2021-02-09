@@ -1,19 +1,19 @@
-<%#= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
-<%= form_with(model: @picture, local: true ,url: confirm_form_method) do |form| %>
-
+<%= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
   <% if @picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
       <ul>
+
       <% @picture.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+
   <div class="picture_image">
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.file_field :image %>
   </div>
   <div class="picture_content">
     <%= form.label :content %>
@@ -21,4 +21,5 @@
   </div>
   <%= form.submit %>
 <% end %>
+
 <%= link_to "一覧画面にもどる", pictures_path %>
