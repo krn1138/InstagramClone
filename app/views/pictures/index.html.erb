@@ -4,13 +4,14 @@
 
 <table>
   <tr>
-    <th>画像</th>
-    <th>内容</th>
+    <th>Name</th>
+    <th>Picture</th>
+    <th>Content</th>
   </tr>
 
 <% @pictures.each do |picture| %>
   <tr>
-    <!-- <td><%#= picture.user.name %></td> -->
+    <td><%= picture.user.name %></td>
     <td><%= image_tag picture.image.url %></td>
     <td><%= picture.content %></td>
     <td><%= link_to '確認する', picture_path(picture.id) %></td>
