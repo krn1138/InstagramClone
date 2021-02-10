@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
