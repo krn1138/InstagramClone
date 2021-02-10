@@ -15,7 +15,9 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
+    # @picture = Picture.new(picture_params)
+    # @picture.user_id = current_user.id
     if params[:back]
       render :new
     else
@@ -32,8 +34,11 @@ class PicturesController < ApplicationController
   #   render :new if @picture.invalid?
   # end
   def confirm
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
+    # @picture = Picture.new(picture_params)
+    # @picture.user_id = current_user.id
     @picture.id = params[:id]
+    # binding.pry
     render :new if @picture.invalid?
   end
 
@@ -66,7 +71,7 @@ class PicturesController < ApplicationController
     params.require(:picture).permit(:id, :image, :content, :image_cache)
   end
 
-  def set_blog
+  def set_picture
     @picture = Picture.find(params[:id])
   end
 
