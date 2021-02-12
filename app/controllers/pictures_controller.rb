@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_signed_in
 
   def index
     @pictures = Picture.all
@@ -34,6 +35,7 @@ class PicturesController < ApplicationController
   #   render :new if @picture.invalid?
   # end
   def confirm
+    # binding.pry
     @picture = current_user.pictures.build(picture_params)
     # @picture = Picture.new(picture_params)
     # @picture.user_id = current_user.id
@@ -43,6 +45,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def edit

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_signed_in, only: %i[ show edit update destroy ]
+
 
   def new
     @user = User.new
@@ -14,7 +16,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def show #中身を追加
+    @user = User.find(params[:id])
+    @pictures = @user.pictures
+
+    favorites = Favorite.where(user_id: current_user.id).pluck(:picture_id)  # ログイン中のユーザーのお気に入りのpost_idカラムを取得
+    @favorite_list = Picture.find(favorites)     # postsテーブルから、お気に入り登録済みのレコードを取得
+  end
+
+  def favorite_list
+    @favorites = Favorite.all
   end
 
   def edit
