@@ -1,6 +1,8 @@
 class FavoritesController < ApplicationController
 
   def index
+     # binding.irb
+     @favorites = current_user.favorite_list
   end
 
   def create

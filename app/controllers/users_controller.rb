@@ -24,10 +24,6 @@ class UsersController < ApplicationController
     @favorite_list = Picture.find(favorites)     # postsテーブルから、お気に入り登録済みのレコードを取得
   end
 
-  def favorite_list
-    @favorites = Favorite.all
-  end
-
   def edit
   end
 

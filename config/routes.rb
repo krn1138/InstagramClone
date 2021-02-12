@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:index, :create, :destroy]
 
 # #6~11を追加
 #   resources :users, only: [:new, :create, :show, :edit, :update] do
