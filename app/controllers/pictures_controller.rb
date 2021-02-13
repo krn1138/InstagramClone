@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :move_to_signed_in
+  before_action :check_not_edit, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -49,6 +50,7 @@ class PicturesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -66,6 +68,7 @@ class PicturesController < ApplicationController
 
 
 
+
   private
   # def picture_params
   #   params.require(:picture).permit(:image, :content)
@@ -76,6 +79,13 @@ class PicturesController < ApplicationController
 
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def check_not_edit
+    # binding.pry
+    unless current_user == @picture.user
+      redirect_to  pictures_path, notice:"編集できません"
+    end
   end
 
 end

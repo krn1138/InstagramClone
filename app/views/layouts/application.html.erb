@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <div class="background"></div>
+
+
+
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -22,6 +26,7 @@
       <%= link_to "Login", new_session_path %>
     <% end %>
     <%= yield %>
+
   </body>
 
 </html>

@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .background {
+   background-image: image-url('3d-instagram_1379-876-2.jpg');
+ }
+
+ h1, h2, h3 {
+   text-align: center;
+ }

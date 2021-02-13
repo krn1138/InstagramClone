@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :move_to_signed_in, only: %i[ show edit update destroy ]
-
+  before_action :check_user_not_edit, only: %i[ show edit update destroy ]
 
   def new
     @user = User.new
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # @user = User.find(params[:id])
+    #   if @user.user == current_user
+    #     render "edit"
+    #   else
+    #     redirect_to users_path
+    #   end
   end
 
   def update
@@ -43,6 +49,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def check_user_not_edit
+    # binding.pry
+    unless @user == current_user
+      redirect_to current_user
+    end
   end
 
 end

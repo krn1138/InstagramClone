@@ -1,25 +1,24 @@
 <h1>ブログ一覧</h1>
-
-<!-- <p><%#= notice %></p> -->
+<div class="new_picture_page"><%= link_to '新しく投稿する', new_picture_path %></div>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Picture</th>
-    <th>Content</th>
+    <th>Content　　　　</th>
   </tr>
 
 <% @pictures.each do |picture| %>
+<%# binding.pry %>
   <tr>
     <td><%= picture.user.name %></td>
     <td><%= image_tag picture.image.url %></td>
     <td><%= picture.content %></td>
     <td><%= link_to '確認する', picture_path(picture.id) %></td>
-    <td><%= link_to "編集する", edit_picture_path(picture.id) %></td>
-    <td><%= link_to '削除する', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <% if current_user == picture.user %>
+      <td><%= link_to "編集する", edit_picture_path(picture.id) %></td>
+      <td><%= link_to '削除する', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
-<br>
-<%= link_to '新しく投稿する', new_picture_path %>
-<%= link_to 'favoriteを表示',pictures_path %>
