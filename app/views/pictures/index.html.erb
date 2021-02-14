@@ -9,7 +9,6 @@
   </tr>
 
 <% @pictures.each do |picture| %>
-<%# binding.pry %>
   <tr>
     <td><%= picture.user.name %></td>
     <td><%= image_tag picture.image.url %></td>

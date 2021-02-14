@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show #中身を追加
+  def show 
     @user = User.find(params[:id])
     @pictures = @user.pictures
 
@@ -25,12 +25,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # @user = User.find(params[:id])
-    #   if @user.user == current_user
-    #     render "edit"
-    #   else
-    #     redirect_to users_path
-    #   end
   end
 
   def update
@@ -52,7 +46,6 @@ class UsersController < ApplicationController
   end
 
   def check_user_not_edit
-    # binding.pry
     unless @user == current_user
       redirect_to current_user
     end

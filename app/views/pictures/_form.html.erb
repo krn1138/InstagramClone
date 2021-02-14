@@ -1,4 +1,3 @@
-
 <%= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
   <% if @picture.errors.any? %>
     <div id="error_explanation">
@@ -11,18 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <!-- <div class="field"> -->
-      <%#= form.label :image %>
-      <!-- <div class="field_two"> -->
-      <%#= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-      <!-- </div> -->
-      <%#= form.file_field :image %>
-      <%#= form.hidden_field :image_cache %>
-    <!-- </div> -->
-  <div class="form_page">
-
-
+<div class="form_page">
   <div class="picture_image">
     <%= form.label :image %>
     <%= form.file_field :image %>
@@ -33,7 +21,7 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+    <%= form.submit %>
 <% end %>
 <br>
 <%= link_to "一覧画面にもどる", pictures_path %>

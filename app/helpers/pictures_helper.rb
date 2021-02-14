@@ -6,16 +6,9 @@ module PicturesHelper
       confirm_picture_path
     end
   end
-  # def choose_new_or_edit
-  #   if action_name == 'new' || action_name == 'create'
-  #     confirm_pictures_path
-  #   elsif action_name == 'edit'
-  #     picture_path
-  #   end
-  # end
 
   def confirm_new_or_edit
-    unless @picture.id? # params[:commit] == 'Create Blog'
+    unless @picture.id?
       pictures_path
     else
       picture_path
@@ -23,6 +16,6 @@ module PicturesHelper
   end
 
   def confirm_form_method
-    @picture.id ? 'patch' : 'post' # 作成時はpost, 編集時は patchを指定
+    @picture.id ? 'patch' : 'post' 
   end
 end

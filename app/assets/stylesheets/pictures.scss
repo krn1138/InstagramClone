@@ -18,13 +18,10 @@ table {
 }
 
 .picture_image {
-  // margin: auto;
-  // margin: 2rem, 600px;
-    width: 200px;               /* 幅指定 */
-    // height: 90px;               /* 高さ指定 */
+    width: 200px;
     margin:  0 auto;
-
 }
+
 li {
   text-align: center;
 }
@@ -32,23 +29,14 @@ li {
 .new_picture {
   margin: 2rem, 500px;
 }
-// .picture_conten {
-//   width: 200px;               /* 幅指定 */
-//   // height: 150px;               /* 高さ指定 */
-//   margin:  0 auto;
-// }
-// .user_edit {
-//   // line-height: 3rem;
-// }
+
 .form_page {
-  // display:block
-  // padding: 60px 10px;
   width: 200px;
   margin-right: 10px;
   margin-top: 50px;
   margin-left: 700px;
-
 }
+
 .picture_confirm {
   width: 200px;
   margin-right: 10px;

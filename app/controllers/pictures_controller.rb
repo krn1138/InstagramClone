@@ -9,22 +9,15 @@ class PicturesController < ApplicationController
 
   def new
     @picture = Picture.new
-  #   if params[:back]
-  #   @picture = Picture.new(picture_params)
-  # else
-  #   @picture = Picture.new
-  #   end
   end
 
   def create
     @picture = current_user.pictures.build(picture_params)
-    # @picture = Picture.new(picture_params)
-    # @picture.user_id = current_user.id
     if params[:back]
       render :new
     else
       if @picture.save
-        PostMailer.post_mail(@picture).deliver 
+        PostMailer.post_mail(@picture).deliver
         redirect_to pictures_path, notice: "画像を投稿しました！"
       else
         render :new
@@ -32,17 +25,9 @@ class PicturesController < ApplicationController
     end
   end
 
-  # def confirm
-  #   @picture = Picture.new(picture_params)
-  #   render :new if @picture.invalid?
-  # end
   def confirm
-    # binding.pry
     @picture = current_user.pictures.build(picture_params)
-    # @picture = Picture.new(picture_params)
-    # @picture.user_id = current_user.id
     @picture.id = params[:id]
-    # binding.pry
     render :new if @picture.invalid?
   end
 
@@ -67,13 +52,7 @@ class PicturesController < ApplicationController
     redirect_to pictures_path, notice:"削除しました！"
   end
 
-
-
-
   private
-  # def picture_params
-  #   params.require(:picture).permit(:image, :content)
-  # end
   def picture_params
     params.require(:picture).permit(:id, :image, :content, :image_cache)
   end
@@ -83,7 +62,6 @@ class PicturesController < ApplicationController
   end
 
   def check_not_edit
-    # binding.pry
     unless current_user == @picture.user
       redirect_to  pictures_path, notice:"編集できません"
     end
