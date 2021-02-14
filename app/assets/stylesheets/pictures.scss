@@ -15,7 +15,7 @@ table {
   text-align: center;
 }
 
-.picture_image,.picture_conten {
+.picture_image {
   // margin: auto;
   // margin: 2rem, 600px;
     width: 200px;               /* 幅指定 */
@@ -29,4 +29,9 @@ li {
 
 .new_picture {
   margin: 2rem, 600px;
+}
+.picture_conten {
+  width: 200px;               /* 幅指定 */
+  // height: 150px;               /* 高さ指定 */
+  margin:  0 auto;
 }
