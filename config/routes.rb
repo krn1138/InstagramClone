@@ -31,4 +31,6 @@ Rails.application.routes.draw do
       get :favorite_list
     end
   end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

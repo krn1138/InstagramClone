@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show_page {
+  // width: 400px;
+  // display: block;
+  // display: flex
+   // word-spacing: 40px;
+   margin: auto;
+   text-align: center;
+
+
+}
+
+.error_explanation {
+  // margin: 2rem, 550px;
+  // text-align: center;
+  // background-color: #03A9F4;  /* 背景色指定 */
+  //   width: 200px;               /* 幅指定 */
+  //   height: 90px;               /* 高さ指定 */
+    margin:  0 auto;
+}
+.user_edit {
+    width: 200px;               /* 幅指定 */
+    // height: 150px;               /* 高さ指定 */
+    margin:  0 auto;
+}
