@@ -13,6 +13,9 @@ module InstagramClone
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
 
+    g.assets false
+    g.helper false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

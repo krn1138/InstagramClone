@@ -20,6 +20,9 @@
       <%#= form.file_field :image %>
       <%#= form.hidden_field :image_cache %>
     <!-- </div> -->
+  <div class="form_page">
+
+
   <div class="picture_image">
     <%= form.label :image %>
     <%= form.file_field :image %>
@@ -32,5 +35,6 @@
   </div>
   <%= form.submit %>
 <% end %>
-
+<br>
 <%= link_to "一覧画面にもどる", pictures_path %>
+</div>

@@ -30,8 +30,26 @@ li {
 .new_picture {
   margin: 2rem, 600px;
 }
-.picture_conten {
-  width: 200px;               /* 幅指定 */
-  // height: 150px;               /* 高さ指定 */
-  margin:  0 auto;
+// .picture_conten {
+//   width: 200px;               /* 幅指定 */
+//   // height: 150px;               /* 高さ指定 */
+//   margin:  0 auto;
+// }
+// .user_edit {
+//   // line-height: 3rem;
+// }
+.form_page {
+  // display:block
+  // padding: 60px 10px;
+  width: 200px;
+  margin-right: 10px;
+  margin-top: 50px;
+  margin-left: 550px;
+
+}
+.picture_confirm {
+  width: 200px;
+  margin-right: 10px;
+  margin-top: 50px;
+  margin-left: 500px;
 }

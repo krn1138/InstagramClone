@@ -3,7 +3,6 @@
 <div class="show_page">
 <p>メールアドレス: <%= @user.email %></p>
 <%= link_to "一覧画面にもどる", pictures_path %>
-<%# <img src="<%= "/user_images/#{@user.image_name}" %>
 <%= image_tag @user.image.url if @user.image && @user.image.url %>
 <% if current_user.id == @user.id %>
 <%= link_to "編集画面", edit_user_path(@user.id) %>
