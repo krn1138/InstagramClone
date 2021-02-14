@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'faker'
+
 group :development do
   gem 'letter_opener_web'
 end
