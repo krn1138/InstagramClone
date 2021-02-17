@@ -11,7 +11,7 @@ module PicturesHelper
     unless @picture.id?
       pictures_path
     else
-      picture_path(@picture)
+      picture_path
     end
   end
 
